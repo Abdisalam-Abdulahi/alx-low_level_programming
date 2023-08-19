@@ -13,6 +13,7 @@ int main(void)
     dlistint_t *head;
 
     head = NULL;
+    
     add_dnodeint(&head, 0);
     add_dnodeint(&head, 1);
     add_dnodeint(&head, 2);
@@ -21,6 +22,7 @@ int main(void)
     add_dnodeint(&head, 98);
     add_dnodeint(&head, 402);
     add_dnodeint(&head, 1024);
+   
     print_dlistint(head);
     return (EXIT_SUCCESS);
 }
