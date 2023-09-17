@@ -15,10 +15,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hash_ptr == NULL)
 		return (NULL);
 	hash_ptr->size = size;
-	hash_ptr->array = calloc(hash_ptr->size, sizeof(hash_node_t));
+	hash_ptr->array = calloc(hash_ptr->size, sizeof(hash_node_t *));
 	if (hash_ptr->array == NULL)
 	{
-		free (hash_ptr);
+		free(hash_ptr);
 		return (NULL);
 	}
 	return (hash_ptr);
