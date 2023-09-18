@@ -13,6 +13,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	hash_node_t *tmp;
 
 	unsigned int long idx;
 	hash_node_t *new_ptr = malloc(sizeof(hash_node_t));
@@ -21,6 +22,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	if (key == NULL)
+		return (0);
+
+	if (ht == NULL)
 		return (0);
 
 	new_ptr->value = strdup(value);
@@ -34,7 +38,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		new_ptr->next = ht->array[idx];
+		tmp = ht->array[idx];
+		new_ptr->next = tmp;
+		ht->array[idx] = new_ptr;
+/*		tmp = new_ptr;*/
+		printf("this is %s\n", ht->array[idx]->value);
+
 	}
 	return (1);
 }
