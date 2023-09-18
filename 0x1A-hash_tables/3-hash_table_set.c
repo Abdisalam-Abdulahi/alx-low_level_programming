@@ -38,9 +38,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		tmp = ht->array[idx];
-		new_ptr->next = tmp;
-		ht->array[idx] = new_ptr;
+		if (strcmp(ht->array[idx]->key, key) == 0)
+			ht->array[idx]->value = strdup(value);
+		else
+		{
+			tmp = ht->array[idx];
+			new_ptr->next = tmp;
+			ht->array[idx] = new_ptr;
+		}
 /*		tmp = new_ptr;*/
 
 	}
