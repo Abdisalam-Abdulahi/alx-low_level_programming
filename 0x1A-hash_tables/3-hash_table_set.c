@@ -42,7 +42,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new_ptr->next = tmp;
 		ht->array[idx] = new_ptr;
 /*		tmp = new_ptr;*/
-		printf("this is %s\n", ht->array[idx]->value);
 
 	}
 	return (1);
