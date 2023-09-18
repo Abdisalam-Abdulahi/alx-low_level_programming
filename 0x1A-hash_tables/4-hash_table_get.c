@@ -12,14 +12,18 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned int long idx;
 	hash_node_t *item;
-	
+
 	if (ht == NULL)
 		return (NULL);
 	idx = key_index((unsigned char *)key, ht->size);
 	item = ht->array[idx];
 
 	if (item != NULL)
+	{
+		if (item->next != NULL)
+			item = item->next;
 		return (item->value);
+	}
 
 	return (NULL);
 }
