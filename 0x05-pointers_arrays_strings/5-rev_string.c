@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  *rev_string - reverses string
  * @s: char pointer
@@ -24,7 +23,6 @@ void rev_string(char *s)
 		s[i - 1 - j] = tmp;
 		j++;
 	}
-	printf("lenghth: %s\n", s);
 
 }
 
