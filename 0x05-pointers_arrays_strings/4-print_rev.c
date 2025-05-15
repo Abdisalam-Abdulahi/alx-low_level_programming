@@ -16,11 +16,11 @@ void print_rev(char *s)
 		i++;
 	}
 /*	printf("length: %d\n", i);*/
-	k = i;
+	k = i - 1;
 	while (k >= 0)
 	{
 		_putchar(s[k]);
 		k--;
 	}
-	/*_putchar('\n');*/
+	_putchar('\n');
 }
