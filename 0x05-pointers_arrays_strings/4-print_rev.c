@@ -15,7 +15,7 @@ void print_rev(char *s)
 	{
 		i++;
 	}
-	printf("length: %d\n", i);
+/*	printf("length: %d\n", i);*/
 	k = i;
 	while (k >= 0)
 	{
