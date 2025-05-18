@@ -4,6 +4,7 @@
   *@s: char pointer
   *Return: char pointer
   */
+
 char *cap_string(char *s)
 {
 	int i;
@@ -25,3 +26,15 @@ char *cap_string(char *s)
 	}
 	return (s);
 }
+
+
+
+
+
+
+
+
+
+
+
+
