@@ -8,16 +8,35 @@
   */
 char *_strstr(char *haystack, char *needle)
 {
-	int i;
-	int j;
-
-	for (i = 0; needle[i] != '\0'; i++)
+	while (*haystack != '\0')
 	{
-		for (j = 0; haystack[j] != '\0'; j++)
+		if ((*haystack == *needle) && compare(haystack, needle))
 		{
-			if (needle[i] == haystack[j])
-				return (&haystack[j]);
+			return (haystack);
 		}
+		haystack++;
 	}
 	return (NULL);
+}
+
+/**
+  *compare - compares the first of x to entirity of y
+  *@x: char ponter
+  *@y: char pointer
+  *Return: returns pointer
+  */
+
+int compare(const char *x, const char *y)
+{
+	while (*x && *y)
+	{
+		if (*x != *y)
+		{
+			return (0);
+		}
+		x++;
+		y++;
+
+	}
+	return (*y == '\0');
 }
