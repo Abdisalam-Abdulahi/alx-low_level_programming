@@ -1,0 +1,25 @@
+#include "main.h"
+
+/**
+  *print_diagsums- a function that prints the chessboard
+  *@size: suze of the array
+  */
+void print_diagsums(int *a, int size)
+{
+	int i;
+	int j;
+	int k;
+	int sum;
+
+	sum = 0;
+	k = 0;
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			sum += a[i][k];
+		}
+		k++;
+	}
+	printf("%d\n", sum);
+}
